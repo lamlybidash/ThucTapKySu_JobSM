@@ -1,0 +1,29 @@
+# Hệ điều hành / IDE
+.DS_Store
+.idea
+.vscode
+*.swp
+*.swo
+
+# Git
+.git
+.gitignore
+
+# Composer
+/vendor
+/node_modules
+
+# Cache / Logs / Build
+/storage/*.key
+/storage/framework/*
+/storage/logs/*
+/bootstrap/cache/*.php
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Môi trường
+.env
+.env.*
