@@ -19,5 +19,5 @@ jobs:
 
       - name: Deploy Docker
         run: |
-          docker compose down
+          docker compose down --remove-orphans
           docker compose up -d --scale app=3 --build
