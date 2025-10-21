@@ -1,18 +1,23 @@
-name: Auto Deploy Laravel
+name: Deploy Laravel App
 
 on:
   push:
     branches:
-      - master  # Khi push code lên nhánh main thì chạy
+      - master
 
 jobs:
   deploy:
-    runs-on: self-hosted  # Dùng runner bạn đã cài
-    steps:
-      - name: Pull latest code
-        run: git pull origin master
+    runs-on: self-hosted
 
-      - name: Rebuild Docker containers
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Pull latest code
         run: |
-          docker-compose down
-          docker-compose up -d --build
+          git pull origin master
+
+      - name: Deploy Docker
+        run: |
+          docker compose down
+          docker compose up -d --build
