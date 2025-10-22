@@ -29,7 +29,6 @@ jobs:
       - name: Run migrations and seed database
         run: |
           docker-compose exec -T app php artisan migrate --force
-          docker-compose exec -T app php artisan db:seed --force
 
       - name: Create storage link
         run: docker-compose exec -T app php artisan storage:link          
