@@ -17,12 +17,14 @@ jobs:
         run: |
           git pull origin master
 
-      - name: Deploy Docker
-        run: |
-          docker compose down --remove-orphans
-          docker compose up -d --scale app=3 --build
-          
       - name: Setup
         run: |
           composer install --no-dev --optimize-autoloader
+
+      - name: Deploy Docker
+        run: |
+          docker-compose down --remove-orphans
+          docker-compose up -d --scale app=3 --build
+          
+
           
