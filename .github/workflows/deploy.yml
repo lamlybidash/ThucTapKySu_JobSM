@@ -26,9 +26,6 @@ jobs:
           docker-compose down --remove-orphans
           docker-compose up -d --scale app=3 --build
 
-      - name: Generate app key
-        run: docker-compose exec -T app php artisan key:generate
-
       - name: Run migrations and seed database
         run: |
           docker-compose exec -T app php artisan migrate --force
