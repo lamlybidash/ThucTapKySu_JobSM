@@ -21,6 +21,17 @@ jobs:
         run: |
           composer install --no-dev --optimize-autoloader
 
+      - name: Generate app key
+        run: php artisan key:generate
+
+      - name: Run migrations and seed database
+        run: |
+          php artisan migrate --force
+          php artisan db:seed --force
+
+      - name: Create storage link
+        run: php artisan storage:link
+
       - name: Deploy Docker
         run: |
           docker-compose down --remove-orphans
