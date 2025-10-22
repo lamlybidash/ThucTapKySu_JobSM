@@ -20,6 +20,7 @@ services:
     working_dir: /var/www
     volumes:
       - .:/var/www
+      - ../../_env/.env:/var/www/.env:ro
     networks:
       - laravel
     depends_on:

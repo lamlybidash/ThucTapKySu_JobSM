@@ -27,3 +27,6 @@ docker-compose.yml
 # Môi trường
 .env
 .env.*
+
+# Symbolic link
+public/storage
