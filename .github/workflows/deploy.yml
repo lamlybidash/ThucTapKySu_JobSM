@@ -20,6 +20,8 @@ jobs:
       - name: Setup
         run: |
           composer install --no-dev --optimize-autoloader
+          cp ../../_env/.env .env
+
 
       - name: Deploy Docker
         run: |
