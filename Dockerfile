@@ -32,7 +32,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 #Cài extensions cho laravel
 RUN docker-php-ext-install pdo mbstring exif pcntl
 
-
 #Cài Composer
 COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
 
